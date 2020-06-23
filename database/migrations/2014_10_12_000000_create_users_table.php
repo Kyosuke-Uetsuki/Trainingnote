@@ -21,9 +21,11 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->integer('height')->nullable();
+            $table->integer('body_weight')->nullable();
+            $table->integer('fat_parcentage')->nullable();
         });
     }
-
     /**
      * Reverse the migrations.
      *
