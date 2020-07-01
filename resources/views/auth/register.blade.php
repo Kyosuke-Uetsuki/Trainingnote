@@ -21,13 +21,14 @@
                 
                 <div class = "form-group">
                     {!! Form::label("password", "Password") !!}
-                    {!! Form::text("password", old("password"),["class" => "form-control"]) !!}
+                    {!! Form::password("password", ["class" => "form-control"]) !!}
                 </div>
                 
                 <div class = "form-group">
                     {!! Form::label("password_confirmation", "Confirmation") !!}
-                    {!! Form::text("password_confirmation", old("password"),["class" => "form-control"]) !!}
+                    {!! Form::password("password_confirmation", ["class" => "form-control"]) !!}
                 </div>
+                
                 <div class = "form-group">
                     {!! Form::label("height", "Height") !!}
                     {!! Form::text("height", old("height"),["class" => "form-control"]) !!}

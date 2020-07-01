@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'height' => ['integer'],
             'body_weight' => ['integer'],
-            'fat_pecentage' => ['integer'],
+            'fat_percentage' => ['integer'],
         ]);
     }
 
@@ -73,7 +73,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'height' => $data['height'],
             'body_weight' => $data['body_weight'],
-            'fat_pecentage' => $data['fat_pecentage'],
+            'fat_percentage' => $data['fat_percentage'],
         ]);
     }
 }

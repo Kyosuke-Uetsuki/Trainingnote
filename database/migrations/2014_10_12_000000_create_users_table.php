@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->integer('height')->nullable();
             $table->integer('body_weight')->nullable();
-            $table->integer('fat_parcentage')->nullable();
+            $table->integer('fat_percentage')->nullable();
         });
     }
     /**

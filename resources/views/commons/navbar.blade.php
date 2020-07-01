@@ -10,9 +10,21 @@
         <div class="collapse navbar-collapse" id="nav-bar">
             <ul class="navbar-nav mr-auto"></ul>
             <ul class="navbar-nav navbar-right">
-                <li>{!! link_to_route("signup.get", "Signup", [], ["class" => "nav-link"])!!}</li>
-       
-                <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
+                @if (Auth::check())
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name}}</a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li class="dropdown-item">{!! link_to_route('users.show', 'Mypage',["user" => Auth::id()]) !!}</li>
+                            <li class="dropdown-item">{!! link_to_route('trainings.index', '投稿') !!}</li>
+                            <li class="dropdown-item">{!! link_to_route('graphs.index', 'Graph') !!}</li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item">{!! link_to_route("logout.get", "Logout")!!}</li>
+                        </ul>
+                    </li>
+                @else
+                    <li>{!! link_to_route("signup.get", "Signup", [], ["class" => "nav-link"])!!}</li>
+                    <li>{!! link_to_route("login", "Login", [], ["class" => "nav-link"])!!}</li>
+                @endif
             </ul>
         </div>
     </nav>
