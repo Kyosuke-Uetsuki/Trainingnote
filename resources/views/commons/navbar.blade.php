@@ -1,5 +1,5 @@
-<header class="mb-4">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<header class="mb-　sticky-top" >
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
         
         <a class="navbar-brand" href="/">Training Note</a>
         

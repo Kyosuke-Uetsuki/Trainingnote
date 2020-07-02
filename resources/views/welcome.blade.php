@@ -50,10 +50,11 @@
         
     @include("trainings.note")
     @else
-    <div class="center jumbotron">
-        <div class="text-center">
-            <h1>Training Note</h1>
-            {!! link_to_route("signup.get", "Sign up now", [], ["class" =>"btn btn-lg btn-primary"])!!}
+    
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center" id="top">
+            <h1 class="text-light">Training Note</h1>
+            {!! link_to_route("signup.get", "Create Account", [], ["class" =>"btn  btn-outline-light rounded-0"])!!}
         </div>
     </div>
     @endif
