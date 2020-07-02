@@ -7,12 +7,20 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     </head>
     <body>
-        <div id="text"></div>
-        <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+        
+        @include("commons.navbar")
+        @include("trainings.navtabs")
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
-        <canvas id="myLine" style="width: 500px; height: 200px;"></canvas>
+        
+        <div class="chart-wrap">
+            <canvas id="myLine" width="1200px" height="450px"></canvas>
+        </div>
+        
         <script src="{{ asset('/js/graph.js') }}"></script>
         
+        @include("trainings.note")
     </body>
 </html>

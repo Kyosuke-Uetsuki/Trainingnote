@@ -22,15 +22,15 @@ $(function(){
             console.log(takeChestVolumes);
             console.log(takeChestDates);
             
-            const ctx = document.getElementById("myLine");
+            const ctx = document.getElementById("myLine").getContext('2d');
             const myLine = new Chart(ctx, {
                 type: 'line',
                 data: { 
                     labels:takeChestDates,
                     datasets: [{
                         data: takeChestVolumes,
-                        backgroundColor: 'RGBA(77,169,155, 0.4)',
-                        borderColor: 'RGBA(77,169,155, 1)',
+                        backgroundColor: 'RGBA(255, 127, 80, 0.4)',
+                        borderColor: 'RGBA(255, 127, 80, 0.4)',
                         borderWidth: 1,
                         lineTension:0.4,
                         pointRadius:2.5,
@@ -38,6 +38,7 @@ $(function(){
                     }]
                 },
                 options:{
+                    responsive: true,
                     layout: {
                         padding: {
                             left: 20,
