@@ -1,6 +1,7 @@
 @extends("layouts.app")
 
 @section("content")
+<div class="container">
     <div class="text-center">
         <h1>Sign up</h1>
     </div>
@@ -48,4 +49,5 @@
             {!! Form::close() !!}
         </div>
     </div>
+</div>
 @endsection

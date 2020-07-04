@@ -33,12 +33,13 @@ class TrainingsTableSeeder extends Seeder
         for($i = 0 ; $i < 1000 ; $i++) {
     
             $training = new \App\Training();
+            $training->user_id = rand(1, 2);
             $training->training_date = 	DateTime::dateTimeThisYear();
             $training->part = Arr::random($parts);
             $training->content = Arr::random($contents);
             $training->weight = rand(1, 10)*10;
-            $training->reps = rand(1, 10);
-            $training->sets = rand(1, 5);
+            $training->reps = rand(5, 10);
+            $training->sets = rand(3, 5);
             $training->mark = rand(1, 2);
             $training->volume = $training->weight * $training->reps *$training->sets;
             $training->save();

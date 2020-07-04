@@ -1,5 +1,5 @@
-<header class="mb-　sticky-top" >
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
+<header class="mb-0">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" id="nav">
         
         <a class="navbar-brand" href="/">Training Note</a>
         
@@ -16,7 +16,7 @@
                         <ul class="dropdown-menu dropdown-menu-right">
                             <li class="dropdown-item">{!! link_to_route('users.show', 'Mypage',["user" => Auth::id()]) !!}</li>
                             <li class="dropdown-item">{!! link_to_route('trainings.index', '投稿') !!}</li>
-                            <li class="dropdown-item">{!! link_to_route('graphs.index', 'Graph') !!}</li>
+                            <li class="dropdown-item">{!! link_to_route('chest.graph', 'グラフ') !!}</li>
                             <li class="dropdown-divider"></li>
                             <li class="dropdown-item">{!! link_to_route("logout.get", "Logout")!!}</li>
                         </ul>

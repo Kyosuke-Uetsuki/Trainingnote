@@ -14,7 +14,7 @@ class TrainingsController extends Controller
         if(\Auth::check()){
             
             $user = \Auth::user();
-            $trainings = Training::orderBy('training_date', 'desc')->paginate(100);
+            $trainings = $user->trainings()->orderBy('training_date', 'desc')->paginate(100);
             
             $data = [
                 "user" => $user,
@@ -37,7 +37,7 @@ class TrainingsController extends Controller
             "mark" => "required|integer",
         ]); 
         
-        Training::create([
+        $request->user()->trainings()->create([
             "training_date" => $request->training_date,
             "part" => $request->part,
             "content" => $request->content,
@@ -57,7 +57,9 @@ class TrainingsController extends Controller
             
             $training = Training::findOrFail($id);
             
+            if (\Auth::id() === $training->user_id) {
             $training->delete();
+        }
     
             return back();
         }

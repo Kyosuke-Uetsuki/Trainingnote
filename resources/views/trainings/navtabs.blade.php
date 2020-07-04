@@ -1,38 +1,31 @@
-<ul class="nav nav-tabs nav-justified mb-0">
-    
+<ul class="nav nav-tabs nav-justified mt-2">
     <li class="nav-item">
-        <a href="{{ route('graphs.index') }}" class="nav-link">
+        <a href="{{ route('chest.graph') }}" class="nav-link {{ Request::routeIs("chest.graph") ? "active" : ""}}">
             胸
-            <span class="badge badge-secondary"></span>
         </a>
     </li>
     
     <li class="nav-item">
-        <a href="{{ route('graphs.index') }}" class="nav-link">
+        <a href="{{ route('back.graph') }}"  class="nav-link {{ Request::routeIs("back.graph") ? "active" : ""}}">
             背中
-            <span class="badge badge-secondary"></span>
         </a>
     </li>
     
     <li class="nav-item">
-        <a href="{{ route('graphs.index') }}" class="nav-link">
+        <a href="{{ route('shoulder.graph') }}"  class="nav-link {{ Request::routeIs("shoulder.graph") ? "active" : ""}}">
             肩
-            <span class="badge badge-secondary"></span>
         </a>
     </li>
     
     <li class="nav-item">
-        <a href="{{ route('graphs.index') }}" class="nav-link">
+        <a href="{{ route('arm.graph') }}"  class="nav-link {{ Request::routeIs("arm.graph") ? "active" : ""}}">
             腕
-            <span class="badge badge-secondary"></span>
         </a>
     </li>
     
     <li class="nav-item">
-        <a href="{{ route('graphs.index') }}" class="nav-link">
+        <a href="{{ route('leg.graph') }}"  class="nav-link {{ Request::routeIs("leg.graph") ? "active" : ""}}">
             脚
-            <span class="badge badge-secondary"></span>
         </a>
     </li>
 </ul>
-

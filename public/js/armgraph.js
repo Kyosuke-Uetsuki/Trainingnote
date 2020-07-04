@@ -1,39 +1,38 @@
-
-
 $(function(){
     $.ajax({
         url: '/ajax/traininggraphs',
         dataType: 'json',
         success: function(data) {
-            let chestTrainings = _.filter(data, { part: "胸" });
-            let orderChestTrainings = _.orderBy(chestTrainings, ["training_date"], ["asc"]);
-            let dateChestTrainings = _.groupBy(orderChestTrainings, "training_date");
-            let chestVolumes = _.map(dateChestTrainings, sumChestTrainings => {
+            let trainings = _.filter(data, { part: "腕" });
+            let orderTrainings = _.orderBy(trainings, ["training_date"], ["asc"]);
+            let dateTrainings = _.groupBy(orderTrainings, "training_date");
+            let volumes = _.map(dateTrainings, sumTrainings => {
 
-                                return _.sumBy(sumChestTrainings, 'volume'); 
+                                return _.sumBy(sumTrainings, 'volume'); 
 
                             });
-            let chestDates = _.map(orderChestTrainings,  "training_date"); 
-            let uniqChestDates = _.sortedUniq(chestDates);
+            let dates = _.map(orderTrainings,  "training_date"); 
+            let uniqDates = _.sortedUniq(dates);
             
-            let takeChestVolumes = _.takeRight(chestVolumes, 30);
-            let takeChestDates = _.takeRight(uniqChestDates, 30);
+            let takeVolumes = _.takeRight(volumes, 30);
+            let takeDates = _.takeRight(uniqDates, 30);
+            let maxVolume = _.max(takeVolumes);
+            let minVolume = _.min(takeVolumes);
 
-            console.log(takeChestVolumes);
-            console.log(takeChestDates);
+            console.log(takeVolumes);
+            console.log(takeDates);
             
             const ctx = document.getElementById("myLine").getContext('2d');
             const myLine = new Chart(ctx, {
                 type: 'line',
                 data: { 
-                    labels:takeChestDates,
+                    labels:takeDates,
                     datasets: [{
-                        data: takeChestVolumes,
-                        backgroundColor: 'RGBA(255, 127, 80, 0.4)',
-                        borderColor: 'RGBA(255, 127, 80, 0.4)',
+                        data: takeVolumes,
+                        backgroundColor: '#1e90ff60',
                         borderWidth: 1,
                         lineTension:0.4,
-                        pointRadius:2.5,
+                        pointRadius:1.5,
                         spanGaps:false
                     }]
                 },
@@ -75,7 +74,8 @@ $(function(){
                             fontSize: 12,
                             beginAtZero:true,
                             maxTicksLimit:20,
-                            suggestedMax: 10000,
+                            suggestedMax: maxVolume+500,
+                            suggestedMin: minVolume,
                             callback: function(value, index, values) {
                                     return value + "kg";
                                 }

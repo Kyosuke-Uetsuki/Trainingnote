@@ -1,7 +1,8 @@
-@extends("layouts.app")
+@extends("layouts.topapp")
 
 @section("content")
 
+    
     @if (Auth::check())
         <div class="container">
             {!! Form::open(['route' => 'trainings.store']) !!}
@@ -12,7 +13,7 @@
                 </div>
                 <div class="form-group">
                     {!! Form::label("part", "部位:",["class" => "mr-2 pt-2"]) !!}
-                    {!! Form::select("part", [null,"胸", "背中", "肩","腕","脚"]) !!}
+                    {!! Form::select("part", [null => null,"胸" => "胸", "背中" => "背中", "肩" => "肩","腕" => "腕","脚" => "脚"]) !!}
                 </div>
             </div>
             <div class="row">
@@ -37,20 +38,21 @@
                     {!! Form::label("sets", "sets",["class" => "pt-2"]) !!}
                 </div>
             </div>
-                
                     {{Form::radio('mark', 2)}}
                     {!! Form::label("mark", "よく行うトレーニングに追加する") !!}
                     {{Form::radio('mark', 1)}}
                     {!! Form::label("mark", "しない",null,["class" => "ml-0"]) !!}
                 
-                
+
                     {!! Form::submit('投稿', ['class' => 'btn btn-primary']) !!}
             {!! Form::close() !!}
         </div>
         
+    <div class="container">
     @include("trainings.note")
+    </div>    
+        
     @else
-    
     <div class="jumbotron jumbotron-fluid">
         <div class="container text-center" id="top">
             <h1 class="text-light">Training Note</h1>

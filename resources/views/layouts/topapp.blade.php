@@ -10,7 +10,7 @@
     
     <body>
     
-        @include("commons.navbar")
+        @include("commons.topnavbar")
         
             @include("commons.error_messages")
             

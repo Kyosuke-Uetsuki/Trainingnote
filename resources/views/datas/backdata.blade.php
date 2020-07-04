@@ -11,6 +11,7 @@
                 <th class="">ボリューム</th>
             </tr>
         @foreach($trainings as $training)
+            @if($training->part == "背中")
             <tr>
                 <td class="text-center">{{$training->training_date}}</td>
                 <td>{{$training->part}}</td>
@@ -27,6 +28,7 @@
                      </div>
                  </td>   
             </tr>
+            @endif
         @endforeach
         </table>
     </div>

@@ -23,7 +23,14 @@ Route::get("logout", "Auth\LoginController@logout")->name("logout.get");
 Route::group(["middleware" => ["auth"]], function(){
     Route::resource("users", "UsersController");
     Route::resource("trainings", "TrainingsController");
-    Route::resource('graphs', 'GraphsController');
 });
 
-Route::get('ajax/traininggraphs', 'Ajax\TrainingGraphController@index');
+Route::group(["middleware" => ["auth"]], function(){
+        Route::get("backgraph", "GraphsController@back")->name("back.graph");
+        Route::get("shouldergraph", "GraphsController@shoulder")->name("shoulder.graph");
+        Route::get("armgraph", "GraphsController@arm")->name("arm.graph");
+        Route::get("leggraph", "GraphsController@leg")->name("leg.graph");
+        Route::get("chestgraph", "GraphsController@chest")->name("chest.graph");
+});
+
+Route::get("ajax/traininggraphs", "Ajax\TrainingGraphController@index");
