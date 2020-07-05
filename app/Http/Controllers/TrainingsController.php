@@ -15,14 +15,18 @@ class TrainingsController extends Controller
             
             $user = \Auth::user();
             $trainings = $user->trainings()->orderBy('training_date', 'desc')->paginate(100);
+            $favorites = $trainings->where("mark",2)->unique("content");
             
             $data = [
                 "user" => $user,
                 "trainings" => $trainings,
+                "favorites" => $favorites,
             ];
+            return view("trainings.index", $data);
+        }else{
+            return view("welcome");
         }
         
-        return view("welcome", $data);
     }
     
     public function store(Request $request)

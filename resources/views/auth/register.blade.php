@@ -1,9 +1,9 @@
 @extends("layouts.app")
 
 @section("content")
-<div class="container">
+<div class="container bg-success mt-5" style="width:550px; height:800px;">
     <div class="text-center">
-        <h1>Sign up</h1>
+        <h4>アカウント作成</h4>
     </div>
     
     <div class="row">

@@ -1,9 +1,10 @@
 @extends("layouts.app")
 
 @section("content")
+
 <div class="container">
     <div class="text-center">
-        <h1>Log in</h1>
+        <a>Log in</a>
     </div>
     
     <div class="row">
