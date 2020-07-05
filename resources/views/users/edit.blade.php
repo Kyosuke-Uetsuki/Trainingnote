@@ -33,8 +33,8 @@
                         {!! Form::label("fat_percentage","%",["class" => "pt-2"]) !!}
                     </div>
                     <div class="row">
-                        {!! Form::submit('変更', ['class' => 'btn btn-success']) !!}
-                        <div class="mr-2">{!! link_to_route('users.show', '戻る', ['user' => $user->id], ['class' => 'btn btn-primary']) !!}</div>
+                        {!! Form::submit('変更', ['class' => 'btn btn-sm btn-outline-success rounded-0']) !!}
+                        <div class="mr-2">{!! link_to_route('trainings.index', '戻る', ['user' => $user->id], ['class' => 'btn btn-sm btn-outline-primary rounded-0']) !!}</div>
                     </div>
                 </li>
             </ul>

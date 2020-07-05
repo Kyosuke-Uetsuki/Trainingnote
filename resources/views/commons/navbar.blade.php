@@ -1,4 +1,4 @@
-<header class="mb-0">
+<header class="mb-5">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark" id="nav">
         
         <a class="navbar-brand" href="/">Training Note</a>

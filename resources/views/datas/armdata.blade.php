@@ -1,5 +1,5 @@
 @if(count($trainings) > 0)
-    <div class="comtainer mt-5 border overflow-auto" style="width:100%; height:300px">
+    <div class="container mt-5 border overflow-auto" style="width:100%; height:300px">
         <table class="table">
             <tr>
                 <th class="text-center">/</th>

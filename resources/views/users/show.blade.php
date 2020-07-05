@@ -1,7 +1,7 @@
 @extends("layouts.app")
 @section("content")
-
-    <h1 class="">Mypage</h1>
+<div class="container">
+    <h2 class="">Mypage</h2>
     
     <div class="row">
         <div class="border col-sm-6">
@@ -23,7 +23,13 @@
         </div>
         <div class="border col-sm-6">
             <p class="text-center">よく行うトレーニングリスト</p>
+            <div class="container mt-5 border overflow-auto">
+                @foreach($favorites as $favorite)
+                    {{ $favorite->content }}
+                @endforeach
+            </div>
         </div>
     </div>
+</div>
 
 @endsection

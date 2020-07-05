@@ -13,10 +13,16 @@ class UsersController extends Controller
     {
         
         $user = User::findOrFail($id);
-
-        return view('users.show', [
-            'user' => $user,
-        ]);
+        $trainings = $user->trainings()->orderBy('training_date', 'desc')->paginate(100);
+        $favorites = $trainings->where("mark",2)->unique("content");
+        
+        $data = [
+                "user" => $user,
+                "trainings" => $trainings,
+                "favorites" => $favorites,
+            ];
+            
+        return view('users.show', $data);
     }
     
     public function edit($id)
@@ -50,7 +56,7 @@ class UsersController extends Controller
             $user->fat_percentage = $request->fat_percentage;
             $user->save();
     
-            return back();
+            return redirect('/');
         }
     }
     
