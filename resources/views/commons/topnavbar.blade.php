@@ -1,6 +1,8 @@
 <header class="mb-0">
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top" id="nav">
         
+        <a class="navbar-brand btn btn-sm  rounded-0 text-light" href="/">Training Note</a>
+        
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#nav-bar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -20,8 +22,8 @@
                         </ul>
                     </li>
                 @else
-                    <li>{!! link_to_route("signup.get", "Signup", [], ["class" => "nav-link btn btn-sm btn-outline-dark rounded-0 mr-2 text-dark"])!!}</li>
-                    <li>{!! link_to_route("login", "Login", [], ["class" => "nav-link btn btn-sm btn-outline-dark rounded-0 text-dark"])!!}</li>
+                    <li>{!! link_to_route("signup.get", "新規登録", [], ["class" => "nav-link btn btn-sm btn-outline-dark rounded-0 mr-2 text-dark"])!!}</li>
+                    <li>{!! link_to_route("login", "ログイン", [], ["class" => "nav-link btn btn-sm btn-outline-dark rounded-0 text-dark"])!!}</li>
                 @endif
             </ul>
         </div>

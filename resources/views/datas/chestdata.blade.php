@@ -3,7 +3,6 @@
         <table class="table">
             <tr>
                 <th class="text-center">/</th>
-                <th class="">部位</th>
                 <th class="">種目</th>
                 <th class="">重量</th>
                 <th class="">回数</th>
@@ -14,7 +13,6 @@
             @if($training->part == "胸")
             <tr>
                 <td class="text-center">{{$training->training_date}}</td>
-                <td>{{$training->part}}</td>
                 <td>{{$training->content}}</td>
                 <td>{{$training->weight}}kg</td>
                 <td>{{$training->reps}}回</td>
