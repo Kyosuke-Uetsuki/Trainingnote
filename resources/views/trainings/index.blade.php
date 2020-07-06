@@ -58,7 +58,7 @@
             
             <div class="col-sm-5 pr-5">
                 <p class="text-center border-bottom">登録情報</p>
-                <div class="row">
+                <div class="d-flex justify-content-between">
                     <div class="col-6 pl-5">
                         <ul class="list-unstyled">
                             <li>ユーザー: {{$user->name}}</li>
@@ -67,21 +67,30 @@
                             <li class="mt-1">体脂肪率: {{$user->fat_percentage}} %</li>
                         </ul>
                     </div>
-                    <div class="col-6 mt-3 pl-5">
-                        <div class="mr-2">{!! link_to_route('users.edit', '編集', ['user' => $user->id], ['class' => 'btn btn-sm btn-outline-success rounded-0']) !!}</div>
-                        <div class="mt-2">
+                    <div class="col-6 mt-3 ">
+                        <div class="mr-2 pl-5">{!! link_to_route('users.edit', '編集', ['user' => $user->id], ['class' => 'btn btn-sm btn-outline-success rounded-0']) !!}</div>
+                        <div class="mt-2 pl-5">
                              {!! Form::model($user, ['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
                              {!! Form::submit('退会', ['class' => 'btn btn-sm btn-outline-dark rounded-0']) !!}
                              {!! Form::close() !!}
                          </div>
                     </div>
                 </div>
+                
                 <div class="mb-0 mt-4">
                     <p class="text-center border-bottom">よく行うトレーニングリスト</p>
                     <div class="container mt-0 overflow-auto" style="width:100%; height:100px">
                         <ul class=" list-unstyled">
                             @foreach($favorites as $favorite)
-                                <li class="my-0">{{ $favorite->content }}</li>
+                                <li class="mt-1">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="ml-3">{{ $favorite->content }}</div>
+                                        <div>{!! Form::open(['route' => ['trainings.update', $favorite->id], 'method' => 'put']) !!}
+                                             {!! Form::submit('取り消す', ['class' => 'btn btn-sm btn-outline-dark rounded-0 mr-3']) !!}
+                                             {!! Form::close() !!}
+                                        </div>
+                                    </div>
+                                </li>
                             @endforeach
                         </ul>
                     </div>

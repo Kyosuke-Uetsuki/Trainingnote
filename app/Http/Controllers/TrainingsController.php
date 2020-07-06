@@ -68,4 +68,17 @@ class TrainingsController extends Controller
             return back();
         }
     }
+    
+    public function update(Request $request, $id)
+    {
+        if(\Auth::check()){
+            
+            $training = Training::findOrFail($id);
+            $training->mark = 1;
+            $training->save();
+            
+        }
+        return back();
+    }
+    
 }

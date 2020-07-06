@@ -28,6 +28,7 @@ Route::group(["middleware" => ["auth"]], function(){
     Route::get("armgraph", "GraphsController@arm")->name("arm.graph");
     Route::get("leggraph", "GraphsController@leg")->name("leg.graph");
     Route::get("chestgraph", "GraphsController@chest")->name("chest.graph");
+    Route::put("trainings/{id}", "MarkController@update")->name("trainings.mark");
 });
 
 
