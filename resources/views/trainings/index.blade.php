@@ -3,10 +3,10 @@
 @section("content")
     <div class="container">
         <div class="row">
-            <div class="col-sm-7 pl-5 pr-0">
+            <div class="col-sm-6 pl-5 ml-5" style="">
                 {!! Form::open(['route' => 'trainings.store']) !!}
                 
-                <div class="form-group row">
+                <div class="form-group row ">
                     {!! Form::label('training_date', '日付:',["class" => "pt-2 col-2"]) !!}
                     {!! Form::date('training_date', date('Y-m-d'),["class" => "form-control col-4"]) !!}   
                 </div>
@@ -49,7 +49,7 @@
                         </div>
                         
                         <div class="col-2">
-                            {!! Form::submit('投稿', ['class' => 'btn btn-sm btn-outline-primary rounded-0']) !!}
+                            {!! Form::submit('投稿', ['class' => 'btn btn-sm btn-outline-primary rounded-0 ']) !!}
                         </div>
                     </div>
                     
@@ -59,12 +59,12 @@
             <div class="col-sm-5 pr-5">
                 <p class="text-center border-bottom">登録情報</p>
                 <div class="row">
-                    <div class="col-6 pl-4">
+                    <div class="col-6 pl-5">
                         <ul class="list-unstyled">
-                            <li>名前: {{$user->name}}</li>
-                            <li>身長: {{$user->height}} cm</li>
-                            <li>体重:  {{$user->body_weight}} kg</li>
-                            <li>体脂肪率: {{$user->fat_percentage}} %</li>
+                            <li>ユーザー: {{$user->name}}</li>
+                            <li class="mt-1">身長: {{$user->height}} cm</li>
+                            <li class="mt-1">体重:  {{$user->body_weight}} kg</li>
+                            <li class="mt-1">体脂肪率: {{$user->fat_percentage}} %</li>
                         </ul>
                     </div>
                     <div class="col-6 mt-3 pl-5">
@@ -76,7 +76,7 @@
                          </div>
                     </div>
                 </div>
-                <div class="mb-0 mt-3">
+                <div class="mb-0 mt-4">
                     <p class="text-center border-bottom">よく行うトレーニングリスト</p>
                     <div class="container mt-0 overflow-auto" style="width:100%; height:100px">
                         <ul class=" list-unstyled">

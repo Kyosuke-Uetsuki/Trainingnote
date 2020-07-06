@@ -14,11 +14,10 @@
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name}}</a>
                         <ul class="dropdown-menu dropdown-menu-right">
-                            <li class="dropdown-item">{!! link_to_route('users.show', 'Mypage',["user" => Auth::id()]) !!}</li>
-                            <li class="dropdown-item">{!! link_to_route('trainings.index', '投稿') !!}</li>
+                            <li class="dropdown-item">{!! link_to_route('trainings.index', 'ノート') !!}</li>
                             <li class="dropdown-item">{!! link_to_route('chest.graph', 'グラフ') !!}</li>
                             <li class="dropdown-divider"></li>
-                            <li class="dropdown-item">{!! link_to_route("logout.get", "Logout")!!}</li>
+                            <li class="dropdown-item">{!! link_to_route("logout.get", "ログアウト")!!}</li>
                         </ul>
                     </li>
                 @else

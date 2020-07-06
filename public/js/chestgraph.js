@@ -19,8 +19,8 @@ $(function(){
             let maxVolume = _.max(takeChestVolumes);
             let minVolume = _.min(takeChestVolumes);
 
-            console.log(takeChestVolumes);
-            console.log(minVolume);
+            // console.log(takeChestVolumes);
+            // console.log(minVolume);
             
             const ctx = document.getElementById("myLine").getContext('2d');
             const myLine = new Chart(ctx, {

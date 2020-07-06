@@ -9,21 +9,6 @@ use App\User;
 class UsersController extends Controller
 {
     
-    public function show($id)
-    {
-        
-        $user = User::findOrFail($id);
-        $trainings = $user->trainings()->orderBy('training_date', 'desc')->paginate(100);
-        $favorites = $trainings->where("mark",2)->unique("content");
-        
-        $data = [
-                "user" => $user,
-                "trainings" => $trainings,
-                "favorites" => $favorites,
-            ];
-            
-        return view('users.show', $data);
-    }
     
     public function edit($id)
     {
