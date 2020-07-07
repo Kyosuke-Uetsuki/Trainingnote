@@ -18,13 +18,6 @@
                 <td>{{$training->reps}}回</td>
                 <td>{{$training->sets}}set</td>   
                 <td>{{$training->volume}}kg</td>   
-                <td>
-                    <div>
-                         {!! Form::model($training, ['route' => ['trainings.destroy', $training->id], 'method' => 'delete']) !!}
-                         {!! Form::submit('削除', ['class' => "btn btn-outline-secondary rounded-0 btn-sm"]) !!}
-                         {!! Form::close() !!}
-                     </div>
-                 </td>   
             </tr>
             @endif
         @endforeach

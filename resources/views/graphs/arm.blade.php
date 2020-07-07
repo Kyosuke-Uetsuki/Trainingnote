@@ -14,10 +14,10 @@
         
         <div class="container">
             @include("trainings.navtabs")
-            
-            <canvas id="myLine" width="1200px" height="450px"></canvas>
+            <div id="text">
+                <canvas id="myLine" width="1200px" height="450px"></canvas>
+            </div>
         </div>
-        
         
         <div class="container">
             @include("datas.armdata")

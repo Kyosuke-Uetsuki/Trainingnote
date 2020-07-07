@@ -14,9 +14,7 @@
             @include("commons.error_messages")
             
             @yield("content")
-        
-        
-        
+     
     </body>
     
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>

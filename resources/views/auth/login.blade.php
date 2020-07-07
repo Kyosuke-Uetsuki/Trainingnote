@@ -2,8 +2,8 @@
 
 @section("content")
 <div class="jumbotron jumbotron-fluid">
-    <div class="container mt-5 text-light border-top border-light" id="top" style="width:400px; height:550px;">
-        <div class="text-center  py-4">
+    <div class="container mt-5 text-light border-light" id="top" style="width:400px; height:550px;">
+        <div class="text-center my-4 border-bottom">
             <h5>ログイン</h5>
         </div>
         
