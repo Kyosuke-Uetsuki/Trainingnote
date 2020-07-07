@@ -11,14 +11,14 @@
                     {!! Form::date('training_date', date('Y-m-d'),["class" => "form-control col-md-4"]) !!}   
                 </div>
                 <div class="form-group row">
-                    {!! Form::label("part", "部位:",["class" => "col-md-2"]) !!}
-                    {!! Form::select("part", [null => null,"胸" => "胸", "背中" => "背中", "肩" => "肩","腕" => "腕","脚" => "脚"]) !!}
+                    {!! Form::label("part", "部位:",["class" => "col-md-2 pt-2"]) !!}
+                    {!! Form::select("part", [null => null,"胸" => "胸", "背中" => "背中", "肩" => "肩","腕" => "腕","脚" => "脚"],null,["class" => "form-control col-md-4"]) !!}
                 </div>
             
                 
                     <div class="form-group row">
                         {!! Form::label("content", "種目:",["class" => "pt-2 col-md-2"]) !!}
-                        <input type="text" list="favorite_list" name="content" class="form-control col-4">
+                        {!! Form::text("content", null,["class" => "form-control col-md-4"],array("list" =>"favorite_list")) !!}
                             <datalist id="favorite_list">
                                 @foreach($favorites as $favorite)
                                     <option value="{{ $favorite->content }}">
