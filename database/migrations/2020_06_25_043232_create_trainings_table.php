@@ -18,7 +18,7 @@ class CreateTrainingsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('part');
             $table->string('content');
-            $table->integer('weight');
+            $table->decimal('weight', 4, 1);
             $table->integer('reps');
             $table->integer('sets');
             $table->timestamps();

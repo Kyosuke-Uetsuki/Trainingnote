@@ -18,7 +18,7 @@
                 
                     <div class="form-group row">
                         {!! Form::label("content", "種目:",["class" => "pt-2 col-md-2"]) !!}
-                        {!! Form::text("content", null,["class" => "form-control col-md-4"],array("list" =>"favorite_list")) !!}
+                        <input type="text" list="favorite_list" name="content" class="form-control col-4" value="{{ old('content') }}">
                             <datalist id="favorite_list">
                                 @foreach($favorites as $favorite)
                                     <option value="{{ $favorite->content }}">
@@ -27,17 +27,17 @@
                     </div>
                     <div class="form-group row" >
                         {!! Form::label("weight", "重量:",["class" => "pt-2 col-md-2"]) !!}
-                        {!! Form::text("weight", null,["class" => "form-control col-md-4"]) !!}
+                        {!! Form::text("weight",old("weight"),["class" => "form-control col-md-4"]) !!}
                         {!! Form::label("weight", "kg",["class" => "pt-2 ml-2"]) !!}
                     </div>
                     <div class="form-group row">
                         {!! Form::label("reps", "回数:",["class" => "pt-2 col-md-2"]) !!}
-                        {!! Form::text("reps", null,["class" => "form-control col-md-4"]) !!}
+                        {!! Form::text("reps", old("reps"),["class" => "form-control col-md-4"]) !!}
                         {!! Form::label("reps", "reps",["class" => "pt-2 ml-2"]) !!}
                     </div>
                     <div class="form-group row">
                         {!! Form::label("sets", "セット:",["class" => "pt-2 col-md-2"]) !!}
-                        {!! Form::text("sets", null,["class" => "form-control col-md-4"]) !!}
+                        {!! Form::text("sets", old("sets"),["class" => "form-control col-md-4"]) !!}
                         {!! Form::label("sets", "sets",["class" => "pt-2 ml-2"]) !!}
                     </div>
                     <div class="row">

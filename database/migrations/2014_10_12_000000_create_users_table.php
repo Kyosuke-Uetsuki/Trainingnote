@@ -21,9 +21,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->integer('height')->nullable();
-            $table->integer('body_weight')->nullable();
-            $table->integer('fat_percentage')->nullable();
+            $table->decimal('height', 4, 1)->nullable();
+            $table->decimal('body_weight', 4, 1)->nullable();
+            $table->decimal('fat_percentage', 3, 1)->nullable();
         });
     }
     /**

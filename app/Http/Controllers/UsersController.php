@@ -28,9 +28,9 @@ class UsersController extends Controller
             
             $this->validate($request, [
                 "name" => "required|max:255",
-                "height" => "integer",
-                "body_weight" => "integer",
-                "fat_percentage" => "integer"
+                "height" => "numeric",
+                "body_weight" => "numeric",
+                "fat_percentage" => "numeric|max:100"
                 ]);
             
                 

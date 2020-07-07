@@ -35,7 +35,7 @@ class TrainingsController extends Controller
             "training_date" => "required|date",
             "part" => "required",
             "content" => "required|max:50",
-            "weight" => "required|integer",
+            "weight" => "numeric|integer",
             "reps" => "required|integer",
             "sets" => "required|integer",
             "mark" => "required|integer",
